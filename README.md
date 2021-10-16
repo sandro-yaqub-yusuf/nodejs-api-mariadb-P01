@@ -24,7 +24,7 @@ Pequeno projeto em NODEJS (API RestFul) com BD MariaDB para simular um back-end 
    npm install -g nodemon
 4. Instalar a biblioteca TS-NODE, utilize o seguinte comando: 
    npm install -g ts-node
-5. Instalar a biblioteca TS-NODE, utilize o seguinte comando: 
+5. Instalar a biblioteca TYPEORM, utilize o seguinte comando: 
    npm install -g typeorm
 
 ----
@@ -40,7 +40,7 @@ Pequeno projeto em NODEJS (API RestFul) com BD MariaDB para simular um back-end 
 
 01. Instalar a biblioteca extra ao TYPESCRIPT no NODEJS: 
     npm install --save-dev @types/node
-02. Instalar a biblioteca extra ao TYPESCRIPT no NODEJS: 
+02. Instalar a biblioteca extra ao TS-NODE-DEV no NODEJS: 
     npm install --save-dev @types/ts-node-dev
 03. Instalar a biblioteca EXPRESS para NODEJS: 
     npm install express
