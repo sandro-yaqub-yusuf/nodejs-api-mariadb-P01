@@ -6,7 +6,7 @@ import AppError from '../helpers/appError';
 dotenv.config();
 
 interface TokenPayload {
-    id: string;
+    id: number;
     iat: number;
     exp: number;
 }

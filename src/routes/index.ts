@@ -1,11 +1,13 @@
 import { Router } from 'express';
-import authRouter from './authRoutes';
-import userRouter from './userRoutes';
+import adminAuthRouter from './adminAuthRoutes';
+import adminUserRouter from './adminUserRoutes';
+import siteHomeRouter from './siteHomeRoutes';
 import authMiddleware from '../middlewares/authMiddleware';
 
 const routes = Router();
 
-routes.use('/admin', authRouter);
-routes.use('/admin/usuario', authMiddleware, userRouter);
+routes.use('/admin', adminAuthRouter);
+routes.use('/admin/usuario', authMiddleware, adminUserRouter);
+routes.use('/', siteHomeRouter);
 
 export default routes;

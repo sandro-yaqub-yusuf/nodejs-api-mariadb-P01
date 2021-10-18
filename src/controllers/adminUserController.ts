@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import UserService from '../services/userService';
 
-class UserController {
+class AdminUserController {
     public async index(req: Request, res: Response): Promise<Response> {
         const users = await UserService.getAll()
 
@@ -17,29 +17,29 @@ class UserController {
     }
 
     public async edit(req: Request, res: Response): Promise<Response> {
-        const { id }: any = req.params;
+        const { id } = req.params;
         const userData = req.body;
 
-        const user = await UserService.update(id, userData);
+        const user = await UserService.update(parseInt(id), userData);
 
         return res.status(200).json(user);
     }
 
     public async delete(req: Request, res: Response): Promise<Response> {
-        const { id }: any = req.params;
+        const { id } = req.params;
 
-        await UserService.destroy(id);
+        await UserService.destroy(parseInt(id));
 
         return res.status(204).json([]);
     }
 
     public async show(req: Request, res: Response): Promise<Response> {
-        const { id }: any = req.params;
+        const { id } = req.params;
 
-        const user = await UserService.getById(id);
+        const user = await UserService.getById(parseInt(id));
 
         return res.status(200).json(user);
     }
 }
 
-export default new UserController();
+export default new AdminUserController();

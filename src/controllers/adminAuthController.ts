@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import UserService from '../services/userService';
 
-class AuthController {
+class AdminAuthController {
     public async login(req: Request, res: Response): Promise<Response> {
         const { email, password } = req.body;
 
@@ -19,4 +19,4 @@ class AuthController {
     }
 }
 
-export default new AuthController();
+export default new AdminAuthController();
