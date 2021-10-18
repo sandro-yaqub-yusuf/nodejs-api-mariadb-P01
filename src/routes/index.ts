@@ -6,8 +6,8 @@ import authMiddleware from '../middlewares/authMiddleware';
 
 const routes = Router();
 
-routes.use('/admin', adminAuthRouter);
-routes.use('/admin/usuario', authMiddleware, adminUserRouter);
-routes.use('/', siteHomeRouter);
+routes.use('/api/v1/admin', adminAuthRouter);
+routes.use('/api/v1/admin/usuario', authMiddleware, adminUserRouter);
+routes.use('/api/v1', siteHomeRouter);
 
 export default routes;

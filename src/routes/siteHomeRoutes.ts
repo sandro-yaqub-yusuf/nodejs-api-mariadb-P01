@@ -3,6 +3,8 @@ import siteHomeController from '../controllers/siteHomeController';
 
 const siteHomeRouter = Router();
 
-siteHomeRouter.get('/', siteHomeController.index);
+siteHomeRouter.get('/listar', siteHomeController.index);
+siteHomeRouter.get('/listar/tipo-animal/:id', siteHomeController.getByAnimalsType);
+siteHomeRouter.get('/listar/adotados', siteHomeController.getByAdopters);
 
 export default siteHomeRouter;
