@@ -5,7 +5,7 @@ import AppError from '../helpers/appError';
 
 dotenv.config();
 
-interface TokenPayload {
+interface ITokenPayload {
     id: number;
     iat: number;
     exp: number;
@@ -21,7 +21,7 @@ export default function authMiddleware(req: Request, res: Response, next: NextFu
     try {
         const data = jwt.verify(token, (process.env.JWTSECRET as string));
 
-        const { id } = data as TokenPayload;
+        const { id } = data as ITokenPayload;
 
         req.userId = id;
 

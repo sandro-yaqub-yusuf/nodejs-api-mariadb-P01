@@ -86,7 +86,10 @@ Pequeno projeto em NODEJS (API RestFul) com BD MariaDB para simular um back-end 
 ## Banco de Dados:
 
 1. Criar um banco de dados com o nome de "petlovedev" com o COLLATE "utf8_general_ci"
-2. Utilizando um software de acesso ao BD, rode o script "ScriptDB.sql" para criar as tabelas e seus respectivos dados
+2. Existem 2 formas de criar as tabelas e seus respectivos dados
+3. Se você instalou todas as bibliotecas do NODE JS, rode o seguinte comando para criar as tabelas e dados:
+   npm run typeorm migration:run
+4. Ou, utilizando um software de acesso ao BD, rode o script "ScriptDB.sql" para criar as tabelas e dados
 
 ----
 

@@ -9,7 +9,7 @@ import UserRepository from '../repositories/userRepository';
 
 dotenv.config();
 
-interface UserInstance {
+interface IUserInstance {
     id?: number;
     roleTypeId: number;
     email: string;
@@ -54,7 +54,7 @@ class UserService {
         return user;
     }
 
-    public async store(userData: UserInstance): Promise<User> {
+    public async store(userData: IUserInstance): Promise<User> {
         const userRepository = getCustomRepository(UserRepository);
 
         if (userData.password != userData.passwordConfirm) throw new AppError(['A Senhas digitadas não conferem !']);
@@ -74,7 +74,7 @@ class UserService {
         return user;
     }
 
-    public async update(id: number, userData: UserInstance): Promise<User> {
+    public async update(id: number, userData: IUserInstance): Promise<User> {
         const userRepository = getCustomRepository(UserRepository);
 
         const user = await userRepository.findOne(id);
