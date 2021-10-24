@@ -2,7 +2,7 @@
 
 * Linguagem principal: Typescript
 * Outras linguagens: Javascript
-* Frameworks utilizadas: TYPESCRIPT, NODEMON, TS-NODE, TS-NODE-DEV, EXPRESS, EXPRESS-ASYNC-ERRORS, TYPEORM, REFLECT-METADATA, CLASS-VALIDATOR, MYSQL2, MULTER, SHARP, BCRYPTJS, CORS, JSONWEBTOKEN, PATH e DOTENV
+* Frameworks utilizadas: TYPESCRIPT, NODEMON, TS-NODE, TS-NODE-DEV, EXPRESS, EXPRESS-ASYNC-ERRORS, EXPRESS-VALIDATOR, TYPEORM, REFLECT-METADATA, MYSQL2, MULTER, SHARP, BCRYPTJS, CORS, JSONWEBTOKEN, PATH e DOTENV
 * Banco de Dados utilizado: MariaDB versão 10.5.8
 * Editor utilizado: Visual Studio Code
 * Informações extras: Necessita conhecimentos médios NodeJS, Javascript e Typescript
@@ -48,37 +48,39 @@ Pequeno projeto em NODEJS (API RestFul) com BD MariaDB para simular um back-end 
     npm install --save-dev @types/express
 05. Instalar a biblioteca EXPRESS-ASYNC-ERRORS para NODEJS: 
     npm install express-async-errors
-06. Instalar a biblioteca TYPEORM para NODEJS: 
+06. Instalar a biblioteca EXPRESS-VALIDATOR para NODEJS: 
+    npm install express-validator
+07. Instalar a biblioteca extra ao EXPRESS-VALIDATOR para NODEJS: 
+    npm install --save-dev @types/express-validator
+08. Instalar a biblioteca TYPEORM para NODEJS: 
     npm install typeorm
-07. Instalar a biblioteca REFLECT-METADATA para NODEJS: 
+09. Instalar a biblioteca REFLECT-METADATA para NODEJS: 
     npm install reflect-metadata
-08. Instalar a biblioteca CLASS-VALIDATOR para NODEJS: 
-    npm install class-validator
-09. Instalar a biblioteca MYSQL2 para NODEJS: 
+10. Instalar a biblioteca MYSQL2 para NODEJS: 
     npm install mysql2
-10. Instalar a biblioteca MULTER para NODEJS: 
+11. Instalar a biblioteca MULTER para NODEJS: 
     npm install multer
-11. Instalar a biblioteca extra ao MULTER para NODEJS: 
+12. Instalar a biblioteca extra ao MULTER para NODEJS: 
     npm install --save-dev @types/multer
-12. Instalar a biblioteca SHARP para NODEJS: 
+13. Instalar a biblioteca SHARP para NODEJS: 
     npm install sharp
-13. Instalar a biblioteca extra ao SHARP para NODEJS: 
+14. Instalar a biblioteca extra ao SHARP para NODEJS: 
     npm install --save-dev @types/sharp
-14. Instalar a biblioteca BCRYPTJS para NODEJS: 
+15. Instalar a biblioteca BCRYPTJS para NODEJS: 
     npm install bcryptjs
-15. Instalar a biblioteca extra ao BCRYPTJS para NODEJS: 
+16. Instalar a biblioteca extra ao BCRYPTJS para NODEJS: 
     npm install --save-dev @types/bcryptjs
-16. Instalar a biblioteca CORS para NODEJS: 
+17. Instalar a biblioteca CORS para NODEJS: 
     npm install cors
-17. Instalar a biblioteca extra ao CORS para NODEJS: 
+18. Instalar a biblioteca extra ao CORS para NODEJS: 
     npm install --save-dev @types/cors
-18. Instalar a biblioteca JSONWEBTOKEN para NODEJS: 
+19. Instalar a biblioteca JSONWEBTOKEN para NODEJS: 
     npm install jsonwebtoken
-19. Instalar a biblioteca extra ao JSONWEBTOKEN para NODEJS: 
+20. Instalar a biblioteca extra ao JSONWEBTOKEN para NODEJS: 
     npm install --save-dev @types/jsonwebtoken
-20. Instalar a biblioteca PATH no NODEJS: 
+21. Instalar a biblioteca PATH no NODEJS: 
     npm install path
-21. Instalar a biblioteca DOTENV para NODEJS: 
+22. Instalar a biblioteca DOTENV para NODEJS: 
     npm install dotenv
 
 ----
