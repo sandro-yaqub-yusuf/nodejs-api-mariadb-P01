@@ -1,4 +1,4 @@
-import {MigrationInterface, QueryRunner} from "typeorm";
+import {MigrationInterface, QueryRunner} from 'typeorm';
 
 export class CreateTableUsers1634485029657 implements MigrationInterface {
     public async up(queryRunner: QueryRunner): Promise<void> {
@@ -10,6 +10,7 @@ export class CreateTableUsers1634485029657 implements MigrationInterface {
                 password varchar(255) NOT NULL,
                 name varchar(100) NOT NULL,
                 terms tinyint(4) NOT NULL,
+                image varchar(255) NULL,
                 reset_password varchar(255) DEFAULT NULL,
                 created_at datetime(6) NOT NULL DEFAULT current_timestamp(6),
                 updated_at datetime(6) DEFAULT current_timestamp(6) ON UPDATE current_timestamp(6),

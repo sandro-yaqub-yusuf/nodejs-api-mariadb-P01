@@ -1,4 +1,4 @@
-import {MigrationInterface, QueryRunner} from "typeorm";
+import {MigrationInterface, QueryRunner} from 'typeorm';
 
 export class SeedTableAnimalsAdoption1634503498941 implements MigrationInterface {
     public async up(queryRunner: QueryRunner): Promise<void> {
@@ -15,7 +15,7 @@ export class SeedTableAnimalsAdoption1634503498941 implements MigrationInterface
             (9, 2, 1, 'Bengal', 'Mila', '2 anos', 'Branco, Preto e Amarelo', 'F', 'Está com as vacinas em dia.', 'bengal-1631486190662.jpg', '2021-10-01 13:19:55.000000', NULL, NULL),
             (10, 2, NULL, 'Siamês', 'Princesa', '4 anos e 3 meses', 'Amarelo e Preto', 'M', 'Está com as vacinas em dia.', 'siames-1631486190662.jpg', '2021-10-01 13:19:55.000000', NULL, NULL),
             (11, 2, NULL, 'Sphynx', 'Jinx', '5 anos', 'Branco', 'M', 'Está com as vacinas em dia.', 'sphynx-1631486190662.jpg', '2021-10-01 13:19:55.000000', NULL, NULL),
-            (12, 2, NULL, 'Angorá', 'Nina', '2 anos', 'Branco', 'F', 'Está com as vacinas em dia.', 'Angora-1633292904344.jpg', '2021-10-01 13:19:55.000000', NULL, NULL);
+            (12, 2, NULL, 'Angorá', 'Nina', '2 anos', 'Branco', 'F', 'Está com as vacinas em dia.', 'angora-1631486190662.jpg', '2021-10-01 13:19:55.000000', NULL, NULL);
         `);
     }
 

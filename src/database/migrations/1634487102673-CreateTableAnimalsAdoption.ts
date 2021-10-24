@@ -1,4 +1,4 @@
-import {MigrationInterface, QueryRunner} from "typeorm";
+import {MigrationInterface, QueryRunner} from 'typeorm';
 
 export class CreateTableAnimalsAdoption1634487102673 implements MigrationInterface {
     public async up(queryRunner: QueryRunner): Promise<void> {
@@ -13,7 +13,7 @@ export class CreateTableAnimalsAdoption1634487102673 implements MigrationInterfa
                 color varchar(50) NOT NULL,
                 sex varchar(1) NOT NULL,
                 note text DEFAULT NULL,
-                image varchar(255) NOT NULL,
+                image varchar(255) NULL,
                 created_at datetime(6) NOT NULL DEFAULT current_timestamp(6),
                 updated_at datetime(6) DEFAULT current_timestamp(6) ON UPDATE current_timestamp(6),
                 deleted_at datetime(6) DEFAULT NULL,

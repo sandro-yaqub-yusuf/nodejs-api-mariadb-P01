@@ -1,12 +1,12 @@
-import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
-import AnimalsAdoption from "./AnimalsAdoption";
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
+import AnimalsAdoption from './AnimalsAdoption';
 
-@Entity("animals_type", { schema: "petlovedev" })
+@Entity('animals_type', { schema: 'petlovedev' })
 export default class AnimalsType {
-    @PrimaryGeneratedColumn({ type: "int", name: "id", unsigned: true })
+    @PrimaryGeneratedColumn({ type: 'int', name: 'id', unsigned: true })
     id: number;
 
-    @Column("varchar", { name: "name", length: 20 })
+    @Column('varchar', { name: 'name', length: 20 })
     name: string;
 
     @OneToMany(

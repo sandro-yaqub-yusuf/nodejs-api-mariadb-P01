@@ -1,4 +1,4 @@
-import {MigrationInterface, QueryRunner} from "typeorm";
+import {MigrationInterface, QueryRunner} from 'typeorm';
 
 export class CreateTableAdopters1634486821778 implements MigrationInterface {
     public async up(queryRunner: QueryRunner): Promise<void> {

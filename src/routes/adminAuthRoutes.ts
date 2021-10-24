@@ -1,9 +1,10 @@
 import { Router } from 'express';
-import adminAuthController from '../controllers/adminAuthController';
+import AdminAuthController from '../controllers/adminAuthController';
+import * as AuthValidator from '../validators/authValidator';
 
 const adminAuthRouter = Router();
 
-adminAuthRouter.post('/login', adminAuthController.login);
-adminAuthRouter.post('/registrar', adminAuthController.register);
+adminAuthRouter.post('/login', AuthValidator.login, AdminAuthController.login);
+adminAuthRouter.post('/registrar', AuthValidator.register, AdminAuthController.register);
 
 export default adminAuthRouter;

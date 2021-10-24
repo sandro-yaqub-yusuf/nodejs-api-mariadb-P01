@@ -1,13 +1,7 @@
 import { getCustomRepository } from 'typeorm';
-import { validate } from 'class-validator';
-import bcrypt from 'bcryptjs';
-import dotenv from 'dotenv';
-import jwt from 'jsonwebtoken';
 import AppError from '../helpers/appError';
 import User from '../models/User';
 import UserRepository from '../repositories/userRepository';
-
-dotenv.config();
 
 interface IUserInstance {
     id?: number;
@@ -17,25 +11,10 @@ interface IUserInstance {
     passwordConfirm?: string;
     name: string;
     terms: number;
+    image: string;
 }
 
 class UserService {
-    public async authenticate(email: string, password: string): Promise<any> {
-        const userRepository = getCustomRepository(UserRepository);
-
-        const user = await userRepository.findByEmail(email);
-
-        if (!user) throw new AppError(['Usuário e/ou Senha inválidos !']);
-
-        const isValidPassword = await bcrypt.compare(password, user.password);
-
-        if (!isValidPassword) throw new AppError(['Usuário e/ou Senha inválidos !']);
-
-        const token = jwt.sign({ id: user.id }, (process.env.JWTSECRET as string), { expiresIn: process.env.JWTEXPIRESIN })
-
-        return { email: user.email, token: token };
-    }
-
     public async getAll(): Promise<User[]> {
         const userRepository = getCustomRepository(UserRepository);
 
@@ -49,7 +28,7 @@ class UserService {
 
         const user = await userRepository.findOne(id);
 
-        if (!user) throw new AppError(['Usuário não encontrado !']);
+        if (!user) throw new AppError([{ msg: 'Usuário não encontrado !' }]);
 
         return user;
     }
@@ -57,17 +36,13 @@ class UserService {
     public async store(userData: IUserInstance): Promise<User> {
         const userRepository = getCustomRepository(UserRepository);
 
-        if (userData.password != userData.passwordConfirm) throw new AppError(['A Senhas digitadas não conferem !']);
+        if (userData.terms <= 0) throw new AppError([{ msg: "O Cadastro não foi efetuado por não concordar com os termos de segurança !" }]);
 
         const userExists = await userRepository.findByEmail(userData.email);
 
-        if (userExists) throw new AppError(['E-mail já cadastrado !']);
+        if (userExists) throw new AppError([{ msg: 'E-mail já cadastrado !' }]);
 
         const user = userRepository.create(userData);
-
-        const errors = await validate(user);
-
-        if (errors.length > 0) throw new AppError(errors.map(e => e.constraints as unknown as string));
 
         await userRepository.save(user);
 
@@ -77,24 +52,21 @@ class UserService {
     public async update(id: number, userData: IUserInstance): Promise<User> {
         const userRepository = getCustomRepository(UserRepository);
 
+        if (userData.terms <= 0) throw new AppError([{ msg: "O Cadastro não foi efetuado por não concordar com os termos de segurança !" }]);
+
         const user = await userRepository.findOne(id);
 
-        if (!user) throw new AppError(['Usuário não encontrado !']);
+        if (!user) throw new AppError([{ msg: 'Usuário não encontrado !' }]);
         
         const userExists = await userRepository.findByEmail(userData.email);
 
-        if (userExists) throw new AppError(['E-mail já cadastrado !']);
-
-        const userValidate = userRepository.create(userData);
-
-        const errors = await validate(userValidate, { skipMissingProperties: true });
-
-        if (errors.length > 0) throw new AppError(errors.map(e => e.constraints as unknown as string));
+        if (userExists) throw new AppError([{ msg: 'E-mail já cadastrado !' }]);
 
         user.roleTypeId = userData.roleTypeId;
         user.email = userData.email
         user.name = userData.name;
         user.terms = userData.terms;
+        user.image = userData.image;
         
         await userRepository.save(user);
 
@@ -106,7 +78,7 @@ class UserService {
 
         const user = await userRepository.findOne(id);
 
-        if (!user) throw new AppError(['Usuário não encontrado !']);
+        if (!user) throw new AppError([{ msg: 'Usuário não encontrado !' }]);
 
         await userRepository.softDelete(id);
     }
